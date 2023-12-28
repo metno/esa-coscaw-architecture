@@ -1,0 +1,26 @@
+@startuml sar-processing-container-diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_TOP_DOWN()
+'LAYOUT_LEFT_RIGHT()
+
+
+System_Ext(nbs, "Norwegian Ground Segment")
+
+SystemDb(data, "Data Proxy", "Proxy to search and access required data.")
+
+System_Boundary(sarproc, "SAR Processing Pilot"){
+
+  Container(gafasar, "GAFA-SAR", "Python", "SAR processor for Doppler estimation (DCA), additive noise correction of sigma naught (NRCS) and image cross-spectra (SCS) estimation.")
+  Container(coscaw, "Wind and Current Estimator", "Python", "Model-based ocean surface current and wind field retrieval.")
+
+}
+
+Rel_D(coscaw, nbs, "stores level-2 data in", "file")
+
+Rel_U(gafasar, data, "access SAR level-0 data in", "file")
+Rel_U(coscaw, data, "search and access auxiliary data in", "https")
+Rel_R(coscaw, gafasar, "access SAR level-1 data in", "file")
+
+@enduml
+

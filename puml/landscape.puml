@@ -1,0 +1,24 @@
+@startuml landscape-diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+'!include <C4/C4_Context>
+
+'LAYOUT_TOP_DOWN()
+LAYOUT_LEFT_RIGHT()
+
+Person(consumer, "Data Consumer")
+
+SystemDb_Ext(MET_data, "MET Data", "Contains auxiliary MetOcean data (data.met.no).")
+SystemDb_Ext(asf, "Alaska SAR Facility", "Contains Sentinel-1 SAR IW mode level-0 data.")
+System_Ext(nbs, "Norwegian Ground Segment")
+
+SystemDb(data, "Data Proxy", "Proxy to search and access required data.")
+
+System(sarproc, "SAR Processing Pilot", "SAR processing: Doppler estimation (DCA), additive noise correction of sigma naught (NRCS), image cross-spectra (SCS) estimation. Surface current and wind retrieval.")
+
+Rel_U(sarproc, data, "searches and accesses data in")
+Rel_U(data, asf, "copies data from")
+Rel_U(data, MET_data, "searches and accesses data in")
+Rel_D(sarproc, nbs, "stores data in")
+Rel_U(consumer, nbs, "searches and accesses data in")
+
+@enduml
