@@ -1,0 +1,27 @@
+@startuml deployment-diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+
+Node(met_data_catalog, "MET data search", "OGC CSW API", "OGC CSW API to data catalog.")
+Node(met_data_access, "MET data access", "OPeNDAP API", "Streaming data access.")
+
+Node(proxy, "Data Proxy tool", "PPI", "Proxy to required data.")
+
+Node(gafasar, "GAFA-SAR", "PPI", "SAR processing from level-0 to level-1.")
+Node(pilot, "Wind and Current Estimator", "PPI", "Processing of wind and current from SAR runs on PPI-ext.")
+
+Node(level0, "SAR IW mode level-0 data storage", "lustre", "Storage of SAR IW mode level-0 data.")
+Node(level1, "SAR IW mode level-1 data storage", "lustre", "SAR DCA, NRCS, SCS.")
+Node(level2, "SAR IW mode level-2 data storage", "lustre", "Sea surface wind and current products.")
+
+Node(nbs, "Norwegian Ground Segment")
+
+Rel(nbs, level2, "mounts")
+Rel(pilot, level2, "stores in")
+Rel(pilot, level1, "reads from")
+Rel(pilot, proxy, "reads via")
+Rel(gafasar, level0, "reads from")
+Rel(gafasar, level1, "stores in")
+Rel(proxy, met_data_catalog, "searches data in")
+Rel(proxy, met_data_access, "accesses data in")
+
+@enduml
