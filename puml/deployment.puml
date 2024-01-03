@@ -13,7 +13,7 @@ Node(level0, "SAR IW mode level-0 data storage", "lustre", "Storage of SAR IW mo
 Node(level1, "SAR IW mode level-1 data storage", "lustre", "SAR DCA, NRCS, SCS.")
 Node(level2, "SAR IW mode level-2 data storage", "lustre", "Sea surface wind and current products.")
 
-Node(nbs, "Norwegian Ground Segment")
+Node(nbs, "Norwegian Ground Segment", "External API")
 
 Rel(nbs, level2, "mounts")
 Rel(pilot, level2, "stores in")
