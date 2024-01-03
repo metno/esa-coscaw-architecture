@@ -11,8 +11,8 @@ SystemDb(data, "Data Proxy", "Proxy to search and access required data.")
 
 System_Boundary(sarproc, "SAR Processing Pilot"){
 
-  Container(gafasar, "GAFA-SAR", "Python", "SAR processor for Doppler estimation (DCA), additive noise correction of sigma naught (NRCS) and image cross-spectra (SCS) estimation.")
-  Container(coscaw, "Wind and Current Estimator", "Python", "Model-based ocean surface current and wind field retrieval.")
+  Container(gafasar, "GAFA-SAR", "Python/Singularity", "SAR processor for Doppler estimation (DCA), additive noise correction of sigma naught (NRCS) and image cross-spectra (SCS) estimation.")
+  Container(coscaw, "Wind and Current Estimator", "Python/Singularity", "Model-based ocean surface current (NORKYST800) and wind field (MET Nordic; 1 km resolution) retrieval.")
 
 }
 

@@ -16,9 +16,9 @@ System_Boundary(data, "Data Store"){
 
 }
 
-Rel_U(sarproc, sar_level0, "accesses data in", "file")
+Rel_U(auxdata, sar_level0, "accesses data in", "file")
 Rel_U(sarproc, auxdata, "searches and accesses data via", "https")
 Rel_U(sar_level0, asf, "copies data from", "https")
-Rel_U(auxdata, MET_data, "searches and accesses data in", "https")
+Rel_R(auxdata, MET_data, "searches and accesses data in", "https")
 
 @enduml
