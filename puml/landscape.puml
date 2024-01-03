@@ -11,7 +11,7 @@ SystemDb_Ext(MET_data, "MET Data", "Contains auxiliary MetOcean data (data.met.n
 SystemDb_Ext(asf, "Alaska SAR Facility", "Contains Sentinel-1 SAR IW mode level-0 data.")
 System_Ext(nbs, "Norwegian Ground Segment")
 
-SystemDb(data, "Data Proxy", "Proxy to search and access required data.")
+SystemDb(data, "Data Store", "Contains proxy to search and access required data.")
 
 System(sarproc, "SAR Processing Pilot", "SAR processing: Doppler estimation (DCA), additive noise correction of sigma naught (NRCS), image cross-spectra (SCS) estimation. Surface current and wind retrieval.")
 

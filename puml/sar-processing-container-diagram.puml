@@ -7,7 +7,7 @@ LAYOUT_TOP_DOWN()
 
 System_Ext(nbs, "Norwegian Ground Segment")
 
-SystemDb(data, "Data Proxy", "Proxy to search and access required data.")
+SystemDb(data, "Data Store", "Contains proxy to search and access required data.")
 
 System_Boundary(sarproc, "SAR Processing Pilot"){
 
