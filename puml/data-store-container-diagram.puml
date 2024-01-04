@@ -12,7 +12,7 @@ System(sarproc, "SAR Processing Pilot", "SAR processing: Doppler estimation (DCA
 System_Boundary(data, "Data Store"){
 
   ContainerDb(sar_level0, "SAR level-0", "lustre", "All IW mode level-0 data covering the Norwegian coast between 2019-2022.")
-  Container(auxdata, "Data search and access proxy", "Python", "Has Python tools to perform OGC CSW search for NORA3, NorKyst-800, NorKyst-DS, E39 data and other relevant MetOcean data, and to provide data access via OPeNDAP. Also mounts a local folder with SAR level-0 data.")
+  Container(auxdata, "Data search and access proxy", "Python", "Has Python tools to perform OGC CSW search for MET Nordic, NorKyst-800, NorKyst-DS, E39 data and other relevant MetOcean data, and to provide data access via OPeNDAP. Also mounts a local folder with SAR level-0 data.")
 
 }
 
