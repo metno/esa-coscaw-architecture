@@ -1,6 +1,12 @@
 # esa-coscaw-architecture
 
-Architecture plan for ESA COSCaW. Use plantuml to view the diagrams interactively: https://plantuml.com/download.
+Architecture plan for ESA COSCaW. Use plantuml to view the diagrams interactively.
+
+Download: https://plantuml.com/download.
+
+Export to png: `java -jar plantuml-*.jar -tpng ~/<filename>.puml`
+
+Interactive viewer: `java -jar plantuml-*.jar`
 
 ## C4 Landscape/Context Diagram
 
